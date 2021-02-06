@@ -1,3 +1,3 @@
-# Git and Github Course
+# Alien Invasion Game
 
-Crash course for Git
+Project № 1 from "Python Crash Course" by Eric Matthes
