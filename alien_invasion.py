@@ -24,7 +24,7 @@ def run_game():
     win_icon = pygame.image.load('images/alien_invasion_icon.png')
     pygame.display.set_icon(win_icon)
     # Creation of the ship.
-    ship = Ship(screen)
+    ship = Ship(ai_settings, screen)
     alien = Alien(screen)
 
     # Starting the main game loop.
