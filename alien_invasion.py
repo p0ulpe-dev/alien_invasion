@@ -4,14 +4,6 @@ from settings import Settings
 from ship import Ship
 from alien import Alien
 import game_functions as gf
-# Создание поверхности
-# surf_screen = pygame.Surface(
-#   (ai_settings.screen_width, ai_settings.screen_height))
-# Окраска поверхности
-# surf_screen.fill((ai_settings.bg_color))
-# Помещение поверхности на другую поверхность в нашем случае на сам экран
-# screen.blit(surf_screen, (0, 0))
-# pygame.display.update()
 
 
 def run_game():
