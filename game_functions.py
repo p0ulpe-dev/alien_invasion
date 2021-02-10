@@ -31,7 +31,7 @@ def check_events(ship):
 
 
 def update_screen(ai_settings, screen, ship, alien):
-    # The screen is redrawn on each pass of the loop.
+    """The screen is redrawn on each pass of the loop."""
     screen.fill(ai_settings.bg_color)
     ship.blitme()
     alien.blitme()
