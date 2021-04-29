@@ -14,7 +14,7 @@ class Settings():
         self.bullet_speed_factor = 1
         self.bullet_width = 3
         self.bullet_height = 15
-        self.bullet_color = 255, 0, 187  # 255, 255, 255
+        self.bullet_color = 252, 0, 72  # 255, 255, 255
         self.bullets_allowed = 3
 
         # Alien setting
