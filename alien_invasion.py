@@ -1,6 +1,7 @@
 import pygame
 
 from settings import Settings
+from game_stats import GameStats
 from ship import Ship
 import game_functions as gf
 from pygame.sprite import Group
@@ -16,10 +17,12 @@ def run_game():
     win_icon = pygame.image.load('images/alien_invasion_icon.png')
     pygame.display.set_icon(win_icon)
 
+    # Creating a GameStats instance for storing game statistics.
+    stats = GameStats(ai_settings)
+
     # Creation of the ship, group of bullets and group of aliens.
     ship = Ship(ai_settings, screen)
-    # alien = Alien(ai_settings, screen)
-    # creating group for bullets.
+    # Creating group for bullets.
     bullets = Group()
     aliens = Group()
 
@@ -28,9 +31,11 @@ def run_game():
     # Starting the main game loop.
     while True:
         gf.check_events(ai_settings, screen, ship, bullets)
-        ship.update()
-        gf.update_bullets(ai_settings, screen, ship, aliens, bullets)
-        gf.update_aliens(ai_settings, aliens)
+        if stats.game_active:
+            ship.update()
+            gf.update_bullets(ai_settings, screen, ship, aliens, bullets)
+            gf.update_aliens(ai_settings, stats, screen, ship, aliens, bullets)
+
         gf.update_screen(ai_settings, screen, ship, bullets, aliens)
 
     # Displays the last drawn screen.
