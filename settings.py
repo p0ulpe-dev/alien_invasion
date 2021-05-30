@@ -13,7 +13,7 @@ class Settings():
 
         # Bullet's settings.
         self.bullet_speed_factor = 3
-        self.bullet_width = 3
+        self.bullet_width = 100
         self.bullet_height = 15
         self.bullet_color = 255, 0, 0  # 255, 255, 255
         self.bullets_allowed = 3
