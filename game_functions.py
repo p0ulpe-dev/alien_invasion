@@ -65,6 +65,8 @@ def check_play_button(ai_settings, screen,
     button_clicked = play_button.rect.collidepoint(mouse_x, mouse_y)
     if button_clicked and not stats.game_active:
         start_game(ai_settings, screen, stats, ship, aliens, bullets)
+        # Reset game settings.
+        ai_settings.initialize_dynamic_settings()
 
 
 def start_game(ai_settings, screen,
@@ -121,6 +123,7 @@ def check_bullet_alien_collisions(ai_settings, screen, ship, aliens, bullets):
     if len(aliens) == 0:
         # Destroy bullets and creating new fleet
         bullets.empty()
+        ai_settings.increase_speed()
         create_fleet(ai_settings, screen, ship, aliens)
 
 
