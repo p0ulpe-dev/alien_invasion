@@ -84,7 +84,7 @@ def start_game(ai_settings, screen,
     ship.center_ship()
 
 
-def update_screen(ai_settings, screen, stats, ship,
+def update_screen(ai_settings, screen, stats, sb, ship,
                   bullets, aliens, play_button):
     """The screen is redrawn on each pass of the loop."""
     screen.fill(ai_settings.bg_color)
@@ -94,6 +94,9 @@ def update_screen(ai_settings, screen, stats, ship,
         bullet.draw_bullet()
     ship.blitme()
     aliens.draw(screen)
+
+    # Displays the score
+    sb.show_score()
 
     if not stats.game_active:
         play_button.draw_button()
